@@ -1,0 +1,16 @@
+body {
+  background-color: #383838;
+}
+h1 {
+  color: #d4f462;
+}
+p{
+  color: #d4f462;
+}
+.bigText {
+  color:GoldenRod;
+  font-size: 130%;
+  letter-spacing: 10px;
+  /*direction: rtl;*/
+  font-weight: bold;
+}
