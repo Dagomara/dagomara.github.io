@@ -1,16 +1,61 @@
 body {
   background-color: #383838;
 }
-h1 {
-  color: #d4f462;
-}
+
+
 p{
+  padding-left: 2em;
+  padding-top: 3em;
   color: #d4f462;
+  font-size: 130%;
 }
+p::selection {
+  background-color: rgba(255, 126, 41, 0.8);
+  color: #383838;
+}
+
+
 .bigText {
+  text-align: center;
   color:GoldenRod;
   font-size: 130%;
   letter-spacing: 10px;
   /*direction: rtl;*/
   font-weight: bold;
+}
+
+a.no-underline {
+  text-decoration: none;
+}
+h1.glowing {
+  text-align: center;
+  font-family: 'Gayathri', sans-serif;
+  font-size: 400%;
+  background-image:repeating-linear-gradient(45deg, #eb4034,#eb8334,#eaff00,#33ff41,#339cff,#6e40f7,#bf00d9,#eb4034);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #383838;
+  -webkit-text-stroke: 3px transparent;
+
+  /*text-shadow:
+    3px 3px 0 transparent,
+    -1px -1px 0 transparent,
+    1px -1px 0 transparent,
+    -1px 1px 0 transparent,
+    1px 1px 0 transparent;*/
+  animation: rainbow_scroll 5s ease infinite;
+  /*-webkit-text-stroke: 1px #d4f462;
+  color: #d4f462;
+  color: #383838;*/
+}
+
+
+@keyframes rainbow_scroll {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
 }
