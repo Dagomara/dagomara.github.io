@@ -1,17 +1,25 @@
+:root {
+  --default-gray: #383838;
+  --clear-orange: rgba(255, 126, 41, 0.8);
+  --text-yellow: #d4f462;
+  --dark-gray: #1f1f1f;
+  --darker-white: #bdbdbd;
+}
+
+
 body {
-  background-color: #383838;
+  background-color: var(--default-gray);
 }
 
 
 p{
   padding-left: 2em;
-  padding-top: 3em;
-  color: #d4f462;
+  color: var(--text-yellow);
   font-size: 130%;
 }
 p::selection {
-  background-color: rgba(255, 126, 41, 0.8);
-  color: #383838;
+  background-color: var(--clear-orange);
+  color: var(--default-gray);
 }
 
 
@@ -34,21 +42,38 @@ h1.glowing {
   background-image:repeating-linear-gradient(45deg, #eb4034,#eb8334,#eaff00,#33ff41,#339cff,#6e40f7,#bf00d9,#eb4034);
   background-size: 800% 800%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #383838;
+  -webkit-text-fill-color: var(--default-gray);
   -webkit-text-stroke: 3px transparent;
 
-  /*text-shadow:
-    3px 3px 0 transparent,
-    -1px -1px 0 transparent,
-    1px -1px 0 transparent,
-    -1px 1px 0 transparent,
-    1px 1px 0 transparent;*/
+
   animation: rainbow_scroll 5s ease infinite;
   /*-webkit-text-stroke: 1px #d4f462;
   color: #d4f462;
   color: #383838;*/
 }
-
+.under-development {
+  background-image: repeating-linear-gradient(-45deg,
+      transparent 0 20px,
+      rgba(255, 126, 41, 0.8) 20px 40px);
+  padding: 20px;
+}
+div.under-development * {
+  font-family: 'Gayathri', sans-serif;
+  font-weight: bolder;
+  font-size: 160%;
+  color: var(--dark-gray);
+  text-shadow:
+    1px 1px 0 var(--darker-white),
+    -1px -1px 0 var(--darker-white),
+    1px -1px 0 var(--darker-white),
+    -1px 1px 0 var(--darker-white),
+    1px 1px 0 var(--darker-white);
+}
+div.under-development *::selection {
+  background-color: var(--default-gray);
+  color: var(--darker-white);
+  text-shadow: none;
+}
 
 @keyframes rainbow_scroll {
     0%,100% {
