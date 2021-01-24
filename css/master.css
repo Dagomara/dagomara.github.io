@@ -4,6 +4,7 @@
   --text-yellow: #d4f462;
   --dark-gray: #1f1f1f;
   --darker-white: #bdbdbd;
+  --dark-blue: #000080;
 }
 
 
@@ -26,7 +27,7 @@ p::selection {
 .bigText {
   text-align: center;
   color:GoldenRod;
-  font-size: 130%;
+  font-size: 200%;
   letter-spacing: 10px;
   /*direction: rtl;*/
   font-weight: bold;
@@ -74,6 +75,23 @@ div.under-development *::selection {
   color: var(--darker-white);
   text-shadow: none;
 }
+
+.links {
+  background-color: var(--dark-blue);
+  font-size: 200%;
+
+}
+div.links * {
+  color: var(--darker-white);
+  font-weight: bolder;
+  font-kerning: none;
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 0.1em;
+  margin-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
 
 @keyframes rainbow_scroll {
     0%,100% {
