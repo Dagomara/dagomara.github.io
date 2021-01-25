@@ -47,4 +47,19 @@
   #wrapper.toggled #sidebar-wrapper {
     margin-left: -15rem;
   }
+
+}
+div#tima button{
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+div.collapse pre {
+  font-size: 0.95em;
+
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
