@@ -5,12 +5,13 @@
  */
 
  :root {
-   --default-gray: #383838;
+   --default-gray: #242424;
    --clear-orange: rgba(255, 126, 41, 0.8);
    --text-yellow: #d4f462;
    --dark-gray: #1f1f1f;
    --darker-white: #bdbdbd;
    --dark-blue: #000080;
+   --link-blue: #7d7dff;
  }
 
  #wrapper {
@@ -24,19 +25,39 @@
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
   transition: margin .25s ease-out;
+  background-color: var(--dark-gray) !important;
+  /*background-color: var(--dark-gray);*/
 }
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
+  background-color: var(--default-gray);
+  font-weight: bold;
+  color: var(--text-yellow);
 }
 
 #sidebar-wrapper .list-group {
   width: 15rem;
+  background-color: inherit;
+}
+#sidebar-wrapper .list-group .list-group-item {
+  color: var(--link-blue);
+  text-decoration: underline;
+  background-color: var(--default-gray) !important;
+  border-bottom-color: var(--darker-white);
+}
+#sidebar-wrapper .list-group .list-group-item.fg-orange {
+  color: var(--clear-orange);
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 #page-content-wrapper {
   min-width: 100vw;
+}
+#page-content-wrapper .navbar {
+  background-color: var(--default-gray) !important;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -62,33 +83,40 @@
 body {
   background-color: var(--default-gray);
   color: var(--darker-white);
+  font-size: 2.6vh;
 }
 h1 {
   font-family: sans-serif;
+  font-size: 7vh;
   color: var(--text-yellow);
-  padding-top: 1.5em;
-  padding-bottom: 1em;
+  padding-top: 0px;
+  margin: 0px;
+  padding-bottom: 0.3em;
 }
 h4 {
+  font-size: 5vh;
   font-family: sans-serif;
   color: var(--text-yellow);
+}
+h4.section-title {
+  font-style: italic;
 }
 
 b {
   color: var(--clear-orange);
 }
 
-button{
+button.orange-btn {
   margin-bottom: 20px;
-  font-size: 1.2em;
-  font-weight: 700%;
-  font-family: fantasy;
+  font-size: 1em;
+  font-weight: bolder;
+  font-family: sans-serif;
   background-color: var(--clear-orange);
-  border-color: var(--clear-orange);
+  /*border-color: var(--clear-orange);*/
 
 }
 div.collapse pre {
-  font-size: 0.95em;
+  font-size: 2vh;
   color: inherit;
 
   overflow-x: auto;
