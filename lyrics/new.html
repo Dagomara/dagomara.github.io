@@ -24,7 +24,7 @@
 
     <!-- Sidebar -->
     <div class="bg-dark border-right border-dark" id="sidebar-wrapper">
-      <div class="sidebar-heading">LyricSystem a1.2 </div>
+      <div class="sidebar-heading">LyricSystem a1.49 </div>
       <div class="list-group list-group-flush">
         <a href="index.html" class="list-group-item list-group-item bg-dark">Dashboard</a>
         <a href="tima.html" class="list-group-item bg-dark fg-orange">Tima Belorusskih</a>
@@ -69,29 +69,38 @@
         </div>
       </nav>
 
-      <div class="container-fluid" style="margin-top: 0px; padding-top: 0em;">
+      <div class="container-fluid" style="margin-top: 0px; padding-top: 0px;">
         <h1 class="mt-4">Lyrics site</h1>
 
-          <h4 class="section-title">TIMA BELORUSSKIH SONGS</h4>
+          <h4 class="section-title">Slavic Songs</h4>
+
 <!-- BEGIN SONGLIST -->
-          <button class="btn orange-btn" onclick='fillSegmentWithLyrics("myty.txt")'>my ty</button>
-          <div id="oduvan"><pre id="demo">
-            gay section ты молчат дома хахаха хорошо пенис :)
-          </pre>
+
+          <button class="btn orange-btn" onclick='replaceSegmentWithLatin()' >Replace Cyrillic with Latin</button>
+
+          <div id="demo" class="container-md">
+            <p>test section<br>ты молчат дома хахаха хорошо пенис :)</p>
+        </div>
+
+          <div class="songListContainer">
+            <div class="col-med">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty</button>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty 2</button>
+            </div>
+
+            <div class="col-med">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty 3</button>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty 4</button>
+            </div>
+
+            <div class="col-med">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty 5</button>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/myty.txt")'>my ty 6</button>
+            </div>
           </div>
-
-
-
-
-
-
-
-
-          <br/><button class="btn orange-btn" onclick='replaceSegmentWithLatin()'>Искры [Iskry]</button>
-          <div id="iskri" class="collapse"><pre>
-          </pre>
-          </div>
-
 
 
           <!--
@@ -133,29 +142,31 @@
   </script>
 
   <!-- Filling and transliterating scripts -->
+  <script src="https://unpkg.com/iuliia@latest/dist/umd/iuliia.min.js"></script>
   <script>
+    function pTransform(str) {
+      return "<p>" + str + "</p>";
+    }
+
     async function fillSegmentWithLyrics(file) {
       document.getElementById("demo").innerHTML = "Hello World" + file;
       try {
         const url = "txt/" + file;
         const response = await fetch(url);
         const data = await response.text();
-        document.getElementById("demo").innerHTML = (data);
+        document.getElementById("demo").innerHTML = pTransform(data);
       } catch (err) {
-        document.getElementById("demo").innerHTML = (err);
+        document.getElementById("demo").innerHTML = pTransform(err);
       }
     }
-  </script>
 
-  <script src="https://unpkg.com/iuliia@latest/dist/umd/iuliia.min.js"></script>
-<script>
     function replaceSegmentWithLatin()
     {
       try {
 
         var source = document.getElementById("demo").innerHTML;
         var result = iuliia.translate(source, iuliia.WIKIPEDIA);
-        document.getElementById("demo").innerHTML = result;
+        document.getElementById("demo").innerHTML = (result);
       }
       catch (err) {
         document.getElementById("demo").innerHTML = (err);
