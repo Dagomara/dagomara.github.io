@@ -31,7 +31,7 @@
         <a href="vocaloid.html" class="list-group-item bg-dark">Vocaloid</a>
         <a href="other.html" class="list-group-item bg-dark">Other</a>
         <a href="#" class="list-group-item bg-dark">Profile</a>
-        <a href="#" class="list-group-item bg-dark">Status</a>
+        <a href="new.html" class="list-group-item bg-dark">New System</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -77,6 +77,8 @@
 <!-- BEGIN SONGLIST -->
 
           <button class="btn orange-btn" onclick='replaceSegmentWithLatin()' >Replace Cyrillic with Latin</button>
+          <button class="btn orange-btn" onclick='changeFontSize("demo", 3)' >+</button>
+          <button class="btn orange-btn" onclick='changeFontSize("demo", -3)' >-</button>
 
           <div id="demo" class="container-md">
             <p>test section<br>ты молчат дома хахаха хорошо пенис :)</p>
@@ -171,6 +173,14 @@
       catch (err) {
         document.getElementById("demo").innerHTML = (err);
       }
+    }
+
+    var demoTextSize = 20;
+
+    function changeFontSize(item, amount)
+    {
+      demoTextSize = parseInt(demoTextSize) + amount + "px";
+      document.getElementById(item).style.fontSize = demoTextSize;
     }
 </script>
 
