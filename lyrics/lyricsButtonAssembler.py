@@ -19,35 +19,36 @@ def printColumns(cols):
         </div>""")
               
         
+def doSlavic():
+    path = "txt/slavic/"
+    cols = []
 
-path = "txt/slavic/"
-cols = []
+    for (root, directories, files) in os.walk(path):
+        # Grabbing artist's name
+        artist = root.split("/")[2]
+        
+        #print(artist)
+        #print("New Column", artist)
 
-for (root, directories, files) in os.walk(path):
-    # Grabbing artist's name
-    artist = root.split("/")[2]
-    
-    print(artist)
-    print("New Column", artist)
+        # Building song repotoire
+        songs = []
+        for file in files:
+            songs.append(file)
+            #print("\t\t", file)
 
-    # Building song repotoire
-    songs = []
-    for file in files:
-        songs.append(file)
-        print("\t\t", file)
+        # Finishing up data structure for this artist and printing it:
+        cols.append((artist, songs))
 
-    # Finishing up data structure for this artist and printing it:
-    cols.append((artist, songs))
+    #input()
+    printColumns(cols)
 
-input()
-printColumns(cols)
+doSlavic()
 
-    
-
+"""
 # Walk through the /txt/slavic folder
 list_of_files = {}
 walked = os.walk(path)
-"""
+
 print(walked)
 
 for (root, directories, files) in walked:
