@@ -1,25 +1,25 @@
 import os
 import sys
 
-def printColumns(cols):
-    print("""<div class="songListContainer container">
-          <div class="row">\n""")
+def printColumns(cols, file):
+    file.write("""<div class="songListContainer container">
+          <div class="row">\n\n""")
     for column in cols[1::]:
-        print("""            <span class="border-right">
+        file.write("""            <span class="border-right">
             <div class="col-auto">
-              <h3>""" + column[0] + """</h3><br>""")
+              <h3>""" + column[0] + """</h3><br>\n""")
         for song in column[1]:
-              print("""\n              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/"""
+              file.write("""\n              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/"""
               + column[0] + "/" + song + """")'>""" + song + """</button>
-              <br>""")
+              <br>\n""")
 
-        print("""            </div>
-          </span>\n""")
-    print("""          </div>
-        </div>""")
+        file.write("""            </div>
+          </span>\n\n""")
+    file.write("""          </div>
+        </div>\n""")
               
         
-def doSlavic():
+def doSlavic(f):
     path = "txt/slavic/"
     cols = []
 
@@ -40,9 +40,9 @@ def doSlavic():
         cols.append((artist, songs))
 
     #input()
-    printColumns(cols)
+    printColumns(cols, f)
 
-doSlavic()
+#doSlavic()
 
 """
 # Walk through the /txt/slavic folder

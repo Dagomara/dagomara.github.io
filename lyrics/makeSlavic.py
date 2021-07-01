@@ -1,9 +1,26 @@
 from lyricsButtonAssembler import doSlavic
 
+# Clearing the slavic.html file. 
+open("slavic.html", 'w', encoding="utf-8").close()
+
+f = open("slavic.html", "a+", encoding="utf-8")
+
 def makeSlavic(head, butt):
-    print(head, end="")
-    doSlavic()
-    print(butt)
+    global f
+    try:
+        print("yo" + f.read())
+        f.write(head)        
+        doSlavic(f)
+        f.write(butt)
+        
+    except:
+        print("Something bad happened")
+        f.close()
+        
+    else:
+        input("Nothing went wrong! Slavic.html file built.")
+        f.close()
+        
 
 # Rest of the file just sets the HTML data for head and butt,
 # then runs makeSlavic(head, butt)
@@ -41,7 +58,7 @@ head = """<!DOCTYPE html>
         <a href="vocaloid.html" class="list-group-item bg-dark">Vocaloid</a>
         <a href="other.html" class="list-group-item bg-dark">Other</a>
         <a href="#" class="list-group-item bg-dark">Profile</a>
-        <a href="new.html" class="list-group-item bg-dark">New System</a>
+        <a href="slavic.html" class="list-group-item bg-dark">New System</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -90,7 +107,7 @@ head = """<!DOCTYPE html>
           <button class="btn orange-btn" onclick='changeFontSize("demo", -3)' >-</button>
 
           <div id="demo" class="container-md">
-            <p>test section<br>ты молчат дома хахаха хорошо пенис :)</p>
+            <p>test section<br>ты молчат дома хахаха хорошо :)</p>
         </div>
 <!-- BEGIN SONGLIST -->
 
