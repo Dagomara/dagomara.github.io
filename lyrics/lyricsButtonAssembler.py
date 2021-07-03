@@ -7,7 +7,7 @@ def printColumns(cols, file):
     for column in cols[1::]:
         file.write("""            <span class="border-right">
             <div class="col-auto">
-              <h3>""" + column[0] + """</h3><br>\n""")
+              <h3>""" + column[0] + """</h3>""" + """<small>""" + str(len(column[1])) + """ Songs</small>""" + """<br>\n""")
         for song in column[1]:
               file.write("""\n              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/"""
               + column[0] + "/" + song + """")'>""" + song + """</button>
