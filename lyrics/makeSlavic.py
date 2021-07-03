@@ -5,6 +5,7 @@ open("slavic.html", 'w', encoding="utf-8").close()
 
 f = open("slavic.html", "a+", encoding="utf-8")
 
+
 def makeSlavic(head, butt):
     global f
     try:
@@ -14,12 +15,13 @@ def makeSlavic(head, butt):
         f.write(butt)
         
     except:
-        print("Something bad happened")
         f.close()
+        print("Something bad happened")
+        
         
     else:
-        input("Nothing went wrong! Slavic.html file built.")
         f.close()
+        input("Nothing went wrong! Slavic.html file built.")
         
 
 # Rest of the file just sets the HTML data for head and butt,

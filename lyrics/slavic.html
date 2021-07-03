@@ -309,3 +309,79 @@
 
               <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Я больше не напишу.txt")'>Я больше не напишу.txt</button>
               <br>
+            </div>
+          </span>
+
+          </div>
+        </div>
+
+<!-- /SONGLIST -->
+
+          <br><br><br><br><br><br><br><br><br><br>
+
+      </div>
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+  <!-- Filling and transliterating scripts -->
+  <script src="https://unpkg.com/iuliia@latest/dist/umd/iuliia.min.js"></script>
+  <script>
+    function pTransform(str) {
+      return "<p>" + str + "</p>";
+    }
+
+    async function fillSegmentWithLyrics(file) {
+      document.getElementById("demo").innerHTML = "Hello World" + file;
+      try {
+        const url = "txt/" + file;
+        const response = await fetch(url);
+        const data = await response.text();
+        document.getElementById("demo").innerHTML = pTransform(data);
+      } catch (err) {
+        document.getElementById("demo").innerHTML = pTransform(err);
+      }
+    }
+
+    function replaceSegmentWithLatin()
+    {
+      try {
+
+        var source = document.getElementById("demo").innerHTML;
+        var result = iuliia.translate(source, iuliia.WIKIPEDIA);
+        document.getElementById("demo").innerHTML = (result);
+      }
+      catch (err) {
+        document.getElementById("demo").innerHTML = (err);
+      }
+    }
+
+    var demoTextSize = 20;
+
+    function changeFontSize(item, amount)
+    {
+      demoTextSize = parseInt(demoTextSize) + amount + "px";
+      document.getElementById(item).style.fontSize = demoTextSize;
+    }
+</script>
+
+
+</body>
+
+</html>
