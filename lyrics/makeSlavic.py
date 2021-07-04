@@ -6,10 +6,11 @@ open("slavic.html", 'w', encoding="utf-8").close()
 f = open("slavic.html", "a+", encoding="utf-8")
 
 
-def makeSlavic(head, butt):
+# Builds the slavic.html file based off of the files in the /txt/slavic folder. 
+def makeSlavicSafe(head, butt):
     global f
     try:
-        print("yo" + f.read())
+        print("yo")
         f.write(head)        
         doSlavic(f)
         f.write(butt)
@@ -20,6 +21,17 @@ def makeSlavic(head, butt):
         
         
     else:
+        f.close()
+        input("Nothing went wrong! Slavic.html file built.")
+
+def makeSlavic(head, butt):
+        global f
+    
+        print("yo")
+        f.write(head)        
+        doSlavic(f)
+        f.write(butt)
+
         f.close()
         input("Nothing went wrong! Slavic.html file built.")
         
@@ -53,10 +65,10 @@ head = """<!DOCTYPE html>
 
     <!-- Sidebar -->
     <div class="bg-dark border-right border-dark" id="sidebar-wrapper">
-      <div class="sidebar-heading">LyricSystem a1.49 </div>
+      <div class="sidebar-heading">LyricSystem a1.5 </div>
       <div class="list-group list-group-flush">
-        <a href="index.html" class="list-group-item list-group-item bg-dark">Dashboard</a>
-        <a href="tima.html" class="list-group-item bg-dark fg-orange">Tima Belorusskih</a>
+        <a href="index.html" class="list-group-item list-group-item fg-orange bg-dark">Dashboard</a>
+        <a href="slavic.html" class="list-group-item bg-dark">Slavic songs</a>
         <a href="vocaloid.html" class="list-group-item bg-dark">Vocaloid</a>
         <a href="other.html" class="list-group-item bg-dark">Other</a>
         <a href="#" class="list-group-item bg-dark">Profile</a>
@@ -102,7 +114,7 @@ head = """<!DOCTYPE html>
         <h1 class="mt-4">Lyrics site</h1>
 
           <h4 class="section-title">Slavic Songs</h4>
-
+          <p>These are songs of Slavic origin.</p>
 
           <button class="btn orange-btn" onclick='replaceSegmentWithLatin()' >Replace Cyrillic with Latin</button>
           <button class="btn orange-btn" onclick='changeFontSize("demo", 3)' >+</button>

@@ -1,28 +1,53 @@
 import os
 import sys
 
-def printColumns(cols, file):
+# cols structure is [.., [author 1, [songs]], ...]
+
+# Sorts artists by how many songs of theirs I have in the system, ascending. 
+def sortArtistsBySongCount(cols):
+    newCols = []
+    for column in cols:
+        newCols.append(column)
+    #print(cols, "\n", newCols)
+    #input()
+    newCols.sort(key=lambda x: len(x[1]))
+    #print(newCols)
+    return newCols
+
+# Does a bunch of HTML work for each artist in cols given. 
+def processArtists(cols, file):
     file.write("""<div class="songListContainer container">
           <div class="row">\n\n""")
-    for column in cols[1::]:
+
+    # For each artist:
+    for column in cols:
+        # Setting up column header w/ artist information
+        authorFirstName = column[0].split(" ")[0] # used for div id
         file.write("""            <span class="border-right">
             <div class="col-auto">
-              <h3>""" + column[0] + """</h3>""" + """<small>""" + str(len(column[1])) + """ Songs</small>""" + """<br>\n""")
+              <a href="#""" + authorFirstName + "\"" + """ data-toggle="collapse"><h3>"""
+                   + column[0] + """</h3></a>""" + """<small>"""
+                   + str(len(column[1])) + """ Songs</small>""" + """<br>\n<div id=""" + "\""
+                   + authorFirstName + "\"" + """ class="collapse">""")
+
+        # Building the list of individual songs
         for song in column[1]:
               file.write("""\n              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/"""
               + column[0] + "/" + song + """")'>""" + song + """</button>
               <br>\n""")
 
-        file.write("""            </div>
+        # Tidying up loose ends
+        file.write("""            </div></div>
           </span>\n\n""")
     file.write("""          </div>
         </div>\n""")
               
-        
+# Runs through the slavic folder and puts all artist/song information in html file f.
 def doSlavic(f):
     path = "txt/slavic/"
     cols = []
 
+    # For each artist:
     for (root, directories, files) in os.walk(path):
         # Grabbing artist's name
         artist = root.split("/")[2]
@@ -30,17 +55,21 @@ def doSlavic(f):
         #print(artist)
         #print("New Column", artist)
 
-        # Building song repotoire
+        # Building song repotoire of artist in question
         songs = []
         for file in files:
             songs.append(file)
             #print("\t\t", file)
 
-        # Finishing up data structure for this artist and printing it:
+        # Finishing up data structure for this artist
         cols.append((artist, songs))
+        
+    # Chopping off junk entry at the beginning of cols
+    cols = cols[1::]
 
-    #input()
-    printColumns(cols, f)
+    # Now that the artists have been arranged into a python-handleable format,
+    # put them into the HTML file :)
+    processArtists(sortArtistsBySongCount(cols), f)
 
 #doSlavic()
 

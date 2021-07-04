@@ -24,10 +24,10 @@
 
     <!-- Sidebar -->
     <div class="bg-dark border-right border-dark" id="sidebar-wrapper">
-      <div class="sidebar-heading">LyricSystem a1.49 </div>
+      <div class="sidebar-heading">LyricSystem a1.5 </div>
       <div class="list-group list-group-flush">
-        <a href="index.html" class="list-group-item list-group-item bg-dark">Dashboard</a>
-        <a href="tima.html" class="list-group-item bg-dark fg-orange">Tima Belorusskih</a>
+        <a href="index.html" class="list-group-item list-group-item fg-orange bg-dark">Dashboard</a>
+        <a href="slavic.html" class="list-group-item bg-dark">Slavic songs</a>
         <a href="vocaloid.html" class="list-group-item bg-dark">Vocaloid</a>
         <a href="other.html" class="list-group-item bg-dark">Other</a>
         <a href="#" class="list-group-item bg-dark">Profile</a>
@@ -73,7 +73,7 @@
         <h1 class="mt-4">Lyrics site</h1>
 
           <h4 class="section-title">Slavic Songs</h4>
-
+          <p>These are songs of Slavic origin.</p>
 
           <button class="btn orange-btn" onclick='replaceSegmentWithLatin()' >Replace Cyrillic with Latin</button>
           <button class="btn orange-btn" onclick='changeFontSize("demo", 3)' >+</button>
@@ -89,8 +89,29 @@
 
             <span class="border-right">
             <div class="col-auto">
-              <h3>MUKKA</h3><small>3 Songs</small><br>
+              <a href="#Neverlove" data-toggle="collapse"><h3>Neverlove</h3></a><small>1 Songs</small><br>
+<div id="Neverlove" class="collapse">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Neverlove/Дикуха.txt")'>Дикуха.txt</button>
+              <br>
+            </div></div>
+          </span>
 
+            <span class="border-right">
+            <div class="col-auto">
+              <a href="#My" data-toggle="collapse"><h3>My</h3></a><small>2 Songs</small><br>
+<div id="My" class="collapse">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/My/Ты old.txt")'>Ты old.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/My/Ты.txt")'>Ты.txt</button>
+              <br>
+            </div></div>
+          </span>
+
+            <span class="border-right">
+            <div class="col-auto">
+              <a href="#MUKKA" data-toggle="collapse"><h3>MUKKA</h3></a><small>3 Songs</small><br>
+<div id="MUKKA" class="collapse">
               <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/MUKKA/АМФЕТОВИТАМИНОВАЯ ВОЙНА.txt")'>АМФЕТОВИТАМИНОВАЯ ВОЙНА.txt</button>
               <br>
 
@@ -99,34 +120,97 @@
 
               <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/MUKKA/Потрахаться и сдохнуть.txt")'>Потрахаться и сдохнуть.txt</button>
               <br>
-            </div>
+            </div></div>
           </span>
 
             <span class="border-right">
             <div class="col-auto">
-              <h3>My</h3><small>2 Songs</small><br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/My/Ты old.txt")'>Ты old.txt</button>
+              <a href="#Tima" data-toggle="collapse"><h3>Tima Belorusskih</h3></a><small>26 Songs</small><br>
+<div id="Tima" class="collapse">
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Rassvet.txt")'>Rassvet.txt</button>
               <br>
 
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/My/Ты.txt")'>Ты.txt</button>
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Алёнка.txt")'>Алёнка.txt</button>
               <br>
-            </div>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/В последний раз.txt")'>В последний раз.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/ВЕСНУШКИ.txt")'>ВЕСНУШКИ.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Витаминка.txt")'>Витаминка.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/возвращаться уже поздно.txt")'>возвращаться уже поздно.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Девочка-песня.txt")'>Девочка-песня.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Дождь.txt")'>Дождь.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Искры.txt")'>Искры.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Любовь по-белорусски.txt")'>Любовь по-белорусски.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Минута вечера.txt")'>Минута вечера.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Мокрые кроссы.txt")'>Мокрые кроссы.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Найду тебя.txt")'>Найду тебя.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/О Простом.txt")'>О Простом.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Одуванчик.txt")'>Одуванчик.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Окей.txt")'>Окей.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Песня-SOS.txt")'>Песня-SOS.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Повторим.txt")'>Повторим.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Подземка.txt")'>Подземка.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Поезда.txt")'>Поезда.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Пост - Soundtrack.txt")'>Пост - Soundtrack.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Привычка убегать.txt")'>Привычка убегать.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/пробегал мимо.txt")'>пробегал мимо.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Тянет к тебе.txt")'>Тянет к тебе.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Фотоплёнка.txt")'>Фотоплёнка.txt</button>
+              <br>
+
+              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Я больше не напишу.txt")'>Я больше не напишу.txt</button>
+              <br>
+            </div></div>
           </span>
 
             <span class="border-right">
             <div class="col-auto">
-              <h3>Neverlove</h3><small>1 Songs</small><br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Neverlove/Дикуха.txt")'>Дикуха.txt</button>
-              <br>
-            </div>
-          </span>
-
-            <span class="border-right">
-            <div class="col-auto">
-              <h3>Rauf & Faik</h3><small>33 Songs</small><br>
-
+              <a href="#Rauf" data-toggle="collapse"><h3>Rauf & Faik</h3></a><small>33 Songs</small><br>
+<div id="Rauf" class="collapse">
               <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Rauf & Faik/5 минут.txt")'>5 минут.txt</button>
               <br>
 
@@ -225,91 +309,7 @@
 
               <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Rauf & Faik/Я огонь ты вода.txt")'>Я огонь ты вода.txt</button>
               <br>
-            </div>
-          </span>
-
-            <span class="border-right">
-            <div class="col-auto">
-              <h3>Tima Belorusskih</h3><small>26 Songs</small><br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Rassvet.txt")'>Rassvet.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Алёнка.txt")'>Алёнка.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/В последний раз.txt")'>В последний раз.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/ВЕСНУШКИ.txt")'>ВЕСНУШКИ.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Витаминка.txt")'>Витаминка.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/возвращаться уже поздно.txt")'>возвращаться уже поздно.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Девочка-песня.txt")'>Девочка-песня.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Дождь.txt")'>Дождь.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Искры.txt")'>Искры.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Любовь по-белорусски.txt")'>Любовь по-белорусски.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Минута вечера.txt")'>Минута вечера.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Мокрые кроссы.txt")'>Мокрые кроссы.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Найду тебя.txt")'>Найду тебя.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/О Простом.txt")'>О Простом.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Одуванчик.txt")'>Одуванчик.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Окей.txt")'>Окей.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Песня-SOS.txt")'>Песня-SOS.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Повторим.txt")'>Повторим.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Подземка.txt")'>Подземка.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Поезда.txt")'>Поезда.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Пост - Soundtrack.txt")'>Пост - Soundtrack.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Привычка убегать.txt")'>Привычка убегать.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/пробегал мимо.txt")'>пробегал мимо.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Тянет к тебе.txt")'>Тянет к тебе.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Фотоплёнка.txt")'>Фотоплёнка.txt</button>
-              <br>
-
-              <button class="btn orange-btn" onclick='fillSegmentWithLyrics("slavic/Tima Belorusskih/Я больше не напишу.txt")'>Я больше не напишу.txt</button>
-              <br>
-            </div>
+            </div></div>
           </span>
 
           </div>
