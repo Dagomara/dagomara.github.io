@@ -10,7 +10,14 @@ def sortArtistsBySongCount(cols):
         newCols.append(column)
     #print(cols, "\n", newCols)
     #input()
-    newCols.sort(key=lambda x: len(x[1]))
+    
+    # SORTING TIME:
+    # Use the following lines to sort by how many songs the artist has in my system.
+    #newCols.sort(key=lambda x: len(x[1]))
+    #newCols.reverse()
+    # User the following line to sort by alphabetical. 
+    newCols.sort(key=lambda x: x[0][0])
+
     #print(newCols)
     return newCols
 
