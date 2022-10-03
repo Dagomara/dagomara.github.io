@@ -143,9 +143,9 @@ div.songListContainer {
 
 #demo p {
   /*width: max-content;*/
-  padding-right:60px;
-  padding-left:60px;
-  margin-right:30px;
+  padding-right:5%;
+  padding-left:5%;
+  /* margin-right:30px; */
 
   outline-color: white;
   outline-style:groove;
